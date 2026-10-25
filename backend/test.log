@@ -1,0 +1,9 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.skillswap:skillswap-backend >-------------------
+[INFO] Building skillswap-backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ skillswap-backend ---
+^C

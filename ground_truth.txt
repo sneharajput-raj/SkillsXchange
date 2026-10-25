@@ -1,0 +1,11 @@
+﻿===CALIB===
+MARKER-A: backslash-dot=[\.] double=[\\.] END
+===YML-MAIN===
+===YML-TEST===
+===PS1===
+===AUTHSERVICE===
+===AUTHCTRL===
+===REGISTERREQ===
+===PROFILESVC===
+===MATCHENG===
+===VALIDATORS===

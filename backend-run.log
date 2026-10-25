@@ -1,0 +1,9 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.skillswap:skillswap-backend >-------------------
+[INFO] Building skillswap-backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.5.16:run (default-cli) > test-compile @ skillswap-backend >>>
+^C

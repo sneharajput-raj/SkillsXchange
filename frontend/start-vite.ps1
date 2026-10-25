@@ -1,0 +1,1 @@
+$proc = Start-Process -FilePath 'cmd' -ArgumentList '/c, cd /d C:\SkillXchange\frontend && start /b node_modules\vite\bin\vite.js --port 5173 --host' -PassThru -NoNewWindow; Write-Host 'Vite PID: '$proc.Id

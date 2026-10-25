@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 250 250 250;
+    --foreground: 24 24 27;
+    --card: 255 255 255;
+    --card-foreground: 24 24 27;
+    --popover: 255 255 255;
+    --popover-foreground: 24 24 27;
+    --primary: 24 24 27;
+    --primary-foreground: 250 250 250;
+    --secondary: 244 244 245;
+    --secondary-foreground: 24 24 27;
+    --muted: 244 244 245;
+    --muted-foreground: 113 113 122;
+    --accent: 20 184 166;
+    --accent-foreground: 24 24 27;
+    --destructive: 185 28 28;
+    --destructive-foreground: 250 250 250;
+    --border: 229 231 235;
+    --input: 229 231 235;
+    --ring: 20 184 166;
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 9 9 11;
+    --foreground: 250 250 250;
+    --card: 24 24 27;
+    --card-foreground: 250 250 250;
+    --popover: 24 24 27;
+    --popover-foreground: 250 250 250;
+    --primary: 250 250 250;
+    --primary-foreground: 24 24 27;
+    --secondary: 39 39 42;
+    --secondary-foreground: 250 250 250;
+    --muted: 39 39 42;
+    --muted-foreground: 161 161 170;
+    --accent: 20 184 166;
+    --accent-foreground: 24 24 27;
+    --destructive: 185 28 28;
+    --destructive-foreground: 250 250 250;
+    --border: 63 63 70;
+    --input: 63 63 70;
+    --ring: 20 184 166;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    font-feature-settings: normal;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  * {
+    @apply border-slate-200;
+    border-color: rgb(var(--border));
+  }
+
+  h1, h2, h3, h4, .heading-font {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .dark body {
+    @apply bg-[#09090b] text-slate-100;
+  }
+
+  .dark * {
+    @apply border-[#3f3f46];
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    border-radius: var(--radius);
+  }
+  .btn-primary {
+    @apply bg-[#18181b] text-white hover:bg-[#27272a] focus:ring-[#14b8a6];
+  }
+  .btn-secondary {
+    @apply bg-white text-slate-900 border border-[#d4d4d8] hover:bg-[#f4f4f5] focus:ring-[#14b8a6];
+  }
+  .btn-accent {
+    @apply bg-[#14b8a6] text-white hover:bg-[#0d9488] focus:ring-[#14b8a6];
+  }
+  .btn-ghost {
+    @apply text-slate-600 hover:bg-[#f4f4f5] focus:ring-[#14b8a6];
+  }
+  .btn-danger {
+    @apply bg-[#b91c1c] text-white hover:bg-[#991b1b] focus-ring-[#b91c1c];
+  }
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+  .btn-lg {
+    @apply px-6 py-3 text-base;
+  }
+  .input {
+    @apply w-full rounded-md border border-[#d4d4d8] bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-[#14b8a6] focus:outline-none focus:ring-1 focus:ring-[#14b8a6];
+    border-radius: var(--radius);
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-slate-700;
+  }
+  .card {
+    @apply rounded-xl border border-[#d4d4d8] bg-white shadow-soft;
+    border-radius: var(--radius);
+  }
+  .card-hover {
+    @apply transition-colors hover:border-[#14b8a6];
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium;
+    border-radius: var(--radius);
+  }
+  .badge-primary {
+    @apply bg-[#18181b] text-white;
+  }
+  .badge-accent {
+    @apply bg-[#f0fdfa] text-[#0f766e];
+  }
+  .badge-secondary {
+    @apply bg-[#f4f4f5] text-[#3f3f46];
+  }
+  .badge-success {
+    @apply bg-[#ecfdf5] text-[#15803d'];
+  }
+  .badge-error {
+    @apply bg-[#fef2f2] text-[#b91c1c'];
+  }
+  .badge-warning {
+    @apply bg-[#fffbeb] text-[#b45309'];
+  }
+}
+
+/* Dark mode card/input overrides */
+.dark .card {
+  @apply bg-[#18181b] border-[#3f3f46];
+}
+.dark .input {
+  @apply bg-[#18181b] border-[#3f3f46] text-slate-100 placeholder-slate-500 focus:border-[#14b8a6];
+}
+.dark .btn-secondary {
+  @apply bg-[#27272a] text-white border-[#3f3f46] hover:bg-[#3f3f46];
+}
+.dark .btn-ghost {
+  @apply text-slate-400 hover:bg-[#27272a];
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #a1a1aa;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #71717a;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #52525b;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #71717a;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth transitions for route changes */
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stagger-reveal {
+  animation: staggerReveal 0.5s ease-out forwards;
+}
+@keyframes staggerReveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
